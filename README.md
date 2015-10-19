@@ -1,5 +1,3 @@
-# SpanningATM
-
 ATM exercise for Spanning.
 
 This simulates an ATM with a very small, touch-only display, using NodeJS.
