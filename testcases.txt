@@ -22,29 +22,32 @@ WALKTHROUGH / TEST CASES
 19) Enter 17 and click OK
 20) Note the "only $20 bills" message, click OK
 21) At the menu, click 4 to end
-22) Enter PIN "1 2 3 4 5 6 (hey, that's on my luggage too!) CLR 1 7 7 6 OK"
-23) Click 1 to check the balance; it should be $200
-24) Click 3 to withdraw
-25) Enter 200 and click OK
-26) Verify the withdrawal and click any key
-27) Click 3 to withdraw again
-28) Oops, you don't have anything to withdraw, click [CLR] to return to the menu
-29) Click 2 to add some funds
-30) Enter 123 OK, then click any key to continue
-31) Close the browser
-32) Open the browser again and navigate to "http://localhost:5000"
-33) Enter PIN 1776 again
-34) Check the balance; it should be $123
-35) Open "http://localhost:5000" in another browser window
-36) Enter PIN 1776 here too
-37) Click 3 to withdraw
-38) Withdraw $120
-39) Go back to the first browser window and check the balance again; it should be $3
-40) Click any key to continue
-41) Leaving the browser window open, kill the HTTP server process with Ctrl-C
-42) Start the server again with "node ATM_server.js"
-43) At the browser window, click 1 for balance
-44) It should not require the PIN to be re-entered, but continue and display $3
-45) Close the browser and kill the server
-46) Check the contents of the "accounts.json" file: it should be '{"A512":17,"A1776":3}'
-47) Now go to a real ATM and get some real money.
+22) Enter PIN "1 2 3 4 5 6" (hey, that's on my luggage too!)
+23) Only 5 asterisks are displayed, since that's the maximum pin length
+24) Click OK and the prompt goes back to "ENTER PIN", since 12345 is not a valid PIN
+25) Click "1 2 3 [CLR] 1 7 7 6 [OK]"
+26) Click 1 to check the balance for this account; it should be $200
+27) Click 3 to withdraw
+28) Enter 200 and click OK
+29) Verify the withdrawal and click any key
+30) Click 3 to withdraw again
+31) Oops, you don't have anything to withdraw, click [CLR] to return to the menu
+32) Click 2 to add some funds
+33) Enter 123 OK, then click any key to continue
+34) Close the browser
+35) Open the browser again and navigate to "http://localhost:5000"
+36) Enter PIN 1776 again
+37) Check the balance; it should still be $123
+38) Open "http://localhost:5000" in another browser window
+39) Enter PIN 1776 here too
+40) Click 3 to withdraw
+41) Withdraw $120
+42) Go back to the first browser window and check the balance again; it should be $3
+43) Click any key to continue
+44) Leaving the browser window open, kill the HTTP server process with Ctrl-C
+45) Start the server again with "node ATM_server.js"
+46) At the browser window, click 1 for balance
+47) It should not require the PIN to be re-entered, but continue and display $3
+48) Close the browser and kill the server
+49) Check the contents of the "accounts.json" file: it should be '{"A512":17,"A1776":3}'
+50) Now go to a real ATM and get some real money.
